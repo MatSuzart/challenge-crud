@@ -1,0 +1,66 @@
+body {
+	margin:0;
+	padding:0;
+	font-size:13px;
+	font-family:Arial;
+}
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
+select,
+textarea {
+	width:80%;
+	height:30px;
+	font-size:13px;
+	outline:0;
+	padding-left:5px;
+	padding-right:5px;
+	margin-top:5px;
+}
+textarea {
+	height:100px;
+	border:1px solid #CCC;
+}
+input[type=submit],
+button,
+.button {
+	border:0px;
+	background-color:#224074;
+	color:#FFF;
+	height:40px;
+	line-height: 40px;
+	border-radius:3px;
+	padding-left:20px;
+	padding-right:20px;
+	cursor:pointer;
+	font-size:13px;
+	display: inline-block;
+}
+.button_small {
+	height:30px;
+	line-height: 30px;
+}
+.button a {
+	color:#FFF;
+	text-decoration: none;
+}
+table {
+	margin-top:10px;
+}
+table th {
+	height:40px;
+	line-height: 40px;
+	background-color:#DDD;
+	text-align: left;
+	padding-left:10px;
+	padding-right: 10px;
+}
+table td {
+	height:40px;
+	line-height: 40px;
+	background-color:#EEE;
+	text-align: left;
+	padding-left:10px;
+	padding-right: 10px;
+}
