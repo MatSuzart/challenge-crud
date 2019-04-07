@@ -1,4 +1,4 @@
-$('input[name=address_zipcode]').on('blur', function(){
+$('input[name=cep]').on('blur', function(){
 	var cep = $(this).val();
 
 	$.ajax({
@@ -7,12 +7,12 @@ $('input[name=address_zipcode]').on('blur', function(){
 		dataType:'json',
 		success:function(json){
 			if(typeof json.logradouro != 'undefined') {
-				$('input[name=address]').val(json.logradouro);
-				$('input[name=address_neighb]').val(json.bairro);
-				$('input[name=address_city]').val(json.cidade);
-				$('input[name=address_state]').val(json.estado);
-				$('input[name=address_country]').val("Brasil");
-				$('input[name=address_number]').focus();
+				$('input[name=logradouro]').val(json.logradouro);
+				$('input[name=bairro]').val(json.bairro);
+				$('input[name=cidade]').val(json.cidade);
+				$('input[name=estado]').val(json.estado);
+				$('input[name=pais]').val("Brasil");
+				$('input[name=numero]').focus();
 			}
 		}
 	});

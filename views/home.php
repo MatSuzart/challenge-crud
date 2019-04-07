@@ -14,7 +14,6 @@
 			<td><?php echo $item['nome']; ?></td>
 			<td><?php echo $item['email']; ?></td>
 			<td>
-				<div class="button button_small"><a href="<?php echo BASE_URL; ?>clientes/registro/<?php echo $item['id']; ?>">Ficha</a></div>
 				<div class="button button_small"><a href="<?php echo BASE_URL; ?>clientes/edit/<?php echo $item['id']; ?>">Editar</a></div>
 				<div class="button button_small"><a href="<?php echo BASE_URL; ?>clientes/del/<?php echo $item['id']; ?>">Excluir</a></div>
 			</td>

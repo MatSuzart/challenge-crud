@@ -27,36 +27,29 @@ class Clientes extends model{
     }
     return $array;
   }
-  public function add($nome, $email,$telefone, $sexo) {
-		if($this->emailExists($email) == false) {
-			$sql = "INSERT INTO clientes (nome, email, telefone, sexo) VALUES (:nome, :email, :telefone, :sexo)";
-			$sql = $this->db->prepare($sql);
-			$sql->bindValue(':nome', $nome);
-			$sql->bindValue(':email', $email);
-			$sql->bindValue(':telefone', $telefone);
-			$sql->bindValue(':sexo', $sexo);
+  public function add($nome, $email, $telefone, $sexo, $logradouro, $numero, $bairro, $cidade, $estado, $pais, $cep) {
+    if($this->emailExists($email) == false) {
+      $sql = "INSERT INTO clientes (nome, email, telefone, sexo, logradouro, numero, bairro, cidade, estado, pais, cep)
+      VALUES (:nome, :email, :telefone, :sexo, :logradouro, :numero, :bairro, :cidade, :estado, :pais, :cep)";
+      $sql = $this->db->prepare($sql);
+      $sql->bindValue(':nome', $nome);
+      $sql->bindValue(':email', $email);
+      $sql->bindValue(':telefone', $telefone);
+      $sql->bindValue(':sexo', $sexo);
+      $sql->bindValue(':logradouro',$logradouro);
+      $sql->bindValue(':numero',$numero);
+      $sql->bindValue(':bairro',$bairro);
+      $sql->bindValue(':cidade',$cidade);
+      $sql->bindValue(':estado',$estado);
+      $sql->bindValue(':pais',$pais);
+      $sql->bindValue(':cep',$cep);
+      $sql->execute();
 
-			$sql->execute();
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-  public function address($logradouro, $numero, $bairro, $cidade, $estado, $pais, $cep){
-  $sql = "INSERT INTO endereco (logradouro, numero, bairro, cidade, estado, pais, cep)
-   VALUES (:logradouro, :numero, :bairro, :cidade, :estado, :pais, :cep)";
-
-  $sql->bindValue(':address', $logradouro);
-  $sql->bindValue(':address_number', $numero);
-  $sql->bindValue('address_neighb', $bairro);
-  $sql->bindValue('address_city',$cidade );
-  $sql->bindValue('address_state', $estado);
-  $sql->bindValue('address_country', $pais);
-  $sql->bindValue('address_zipcode',$cep);
-  $sql->execute();
-}
-
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 public function edit($nome, $id) {
   $sql = "UPDATE clientes SET nome = :nome WHERE id = :id";
@@ -85,5 +78,6 @@ public function delete($id){
       }
     }
   }
+
 
  ?>

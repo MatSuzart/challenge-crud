@@ -13,7 +13,7 @@
 			<?php $this->loadViewInTemplate($viewName, $viewData); ?>
 		</section>
 		<footer>
-			Todos os direitos reservados
+			github.com/MathSuzart
 		</footer>
 	</body>
 </html>

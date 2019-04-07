@@ -19,16 +19,16 @@ class clientesController extends controller{
   			$email = $_POST['email'];
         $telefone = $_POST['telefone'];
         $sexo = $_POST['sexo'];
-        $logradouro = $_POST['address'];
-        $numero = $_POST['address_number'];
-        $bairro = $_POST['address_neighb'];
-        $cidade = $_POST['address_city'];
-        $estado = $_POST['address_state'];
-        $pais = $_POST['address_country'];
-        $cep = $_POST['address_zipcode'];
+        $logradouro = $_POST['logradouro'];
+        $numero = $_POST['numero'];
+        $bairro = $_POST['bairro'];
+        $cidade = $_POST['cidade'];
+        $estado = $_POST['estado'];
+        $pais = $_POST['pais'];
+        $cep = $_POST['cep'];
 
   			$clientes = new Clientes();
-  			if($clientes->add($nome, $email,$telefone, $sexo)) {
+  			if($clientes->add($nome, $email, $telefone, $sexo, $logradouro, $numero, $bairro, $cidade, $estado, $pais, $cep)) {
   				header("Location: ".BASE_URL);
   			} else {
   				header("Location: ".BASE_URL.'clientes/add?error=exist');

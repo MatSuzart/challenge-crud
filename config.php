@@ -10,7 +10,7 @@ if(ENVIRONMENT == 'development') {
 	$config['dbpass'] = '';
 } else {
 	define("BASE_URL", "http://meusite.com.br/");
-	$config['dbname'] = 'crudoo';
+	$config['dbname'] = '';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = 'root';
